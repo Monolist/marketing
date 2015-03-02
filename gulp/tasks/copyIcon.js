@@ -1,10 +1,10 @@
 'use strict';
 
-var gulp = require('gulp');
+var gulp   = require('gulp');
 
-gulp.task('copyIcon', function() {
+gulp.task('copyIcons', function() {
 
-  return gulp.src('./public/favicon.ico')
-  .pipe(gulp.dest('./build/'));
+  return gulp.src('./public/*.{png,ico,xml,json}')
+  .pipe(gulp.dest('build/'));
 
 });
