@@ -29,8 +29,6 @@ $(document).ready(function() {
       }, 1500);
     });
 
-    require('./operatingSystem');
-
     require('./scrollHandler');
   });
 
