@@ -1,7 +1,8 @@
 'use strict';
 
-var gulp     = require('gulp');
-var assemble = require('gulp-assemble');
+var gulp        = require('gulp');
+var assemble    = require('gulp-assemble');
+var browserSync = require('browser-sync');
 
 gulp.task('assemble', function() {
 
@@ -13,6 +14,7 @@ gulp.task('assemble', function() {
     partials:  './public/templates/partials/**/*.hbs',
     layoutdir: './public/templates/layouts/'
   }))
-  .pipe(gulp.dest('./build/'));
+  .pipe(gulp.dest('./build/'))
+  .pipe(browserSync.stream({ once: true }));
 
 });
