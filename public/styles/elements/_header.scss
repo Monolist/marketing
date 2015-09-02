@@ -1,13 +1,13 @@
 header {
 
-  z-index: 2;
+  z-index: 15;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   height: $header-height;
 
-  background-color: transparent;
+  background-color: $highlight;
   @include transition(background-color 0.2s ease-in-out);
 
   & > .shadow {
@@ -48,8 +48,8 @@ header {
   }
 
   .logo-container > .logo {
-    width: 200px;
-    height: 42px;
+    width: 150px;
+    height: 30px;
     background-image: url('../images/logo.png');
     background-size: 100% 100%;
     background-position: left top;
@@ -60,14 +60,18 @@ header {
     font-size: 18px;
 
     &:hover {
-      color: $highlight;
+      color: $white;
     }
   }
 
-  &.solid {
-    background-color: $dark-grey-background;
+  .signup {
+    opacity: 0;
+    @include transition(opacity 0.2s ease-in-out);
+  }
 
-    & > .shadow { opacity: 0.2; }
+  &.past-hero {
+    & > .shadow { opacity: 0.8; }
+    & .signup { opacity: 1; }
   }
 
 }

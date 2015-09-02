@@ -14,9 +14,9 @@ module.exports = (function() {
     currentScrollPosition = $(document).scrollTop();
 
     if ( currentScrollPosition > (heroBottom - headerHeight) ) {
-      $header.addClass('solid');
+      $header.addClass('past-hero');
     } else {
-      $header.removeClass('solid');
+      $header.removeClass('past-hero');
     }
   });
 

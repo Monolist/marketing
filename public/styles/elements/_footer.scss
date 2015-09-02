@@ -1,9 +1,12 @@
 footer {
 
+  z-index: 15;
+  position: relative;
   display: table;
   width: 100%;
-  padding: $half-space $half-space/2 $half-space ($sidebar-width+$half-space/2);
+  padding: $half-space ($sidebar-width+$half-space/2);
 
+  @include box-shadow(10px 10px 50px 25px rgba(0, 0, 0, 0.2));
   background: $dark-grey-background;
   color: $light-grey-text;
   font-size: 16px;
