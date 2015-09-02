@@ -1,18 +1,23 @@
 'use strict';
 
-var gulp   = require('gulp');
-var sass   = require('gulp-sass');
-var rename = require('gulp-rename');
+var gulp        = require('gulp');
+var sass        = require('gulp-sass');
+var rename      = require('gulp-rename');
+var browserSync = require('browser-sync');
+var config      = require('../config');
 
 gulp.task('sass', function() {
 
-  return gulp.src('./public/styles/main.scss')
+  return gulp.src(config.styles.src)
   // The onerror handler prevents Gulp from crashing when you make a mistake in your SASS
   .pipe(sass({
-    style: global.isProd ? 'compressed' : 'nested',
+    sourceComments: global.isProd ? 'none' : 'map',
+    sourceMap: 'sass',
+    outputStyle: global.isProd ? 'compressed' : 'nested',
     onError: function(e) { console.log(e); }
   }))
   .pipe(rename({suffix: '.min'}))
-  .pipe(gulp.dest('./build/css/'));
+  .pipe(gulp.dest(config.styles.dest))
+  .pipe(browserSync.stream({ once: true }));
 
 });
