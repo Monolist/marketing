@@ -8,6 +8,8 @@ body, html {
   height: 100%;
   margin: 0;
   padding: 0;
+  float: none;
+  min-width: 0;
 }
 
 body {
@@ -41,6 +43,22 @@ body {
 
 .full-width {
   width: 100%;
+}
+
+.show-mobile {
+  display: none !important;
+
+  @media (max-width: 49em) {
+    display: block !important;
+  }
+}
+
+.hide-mobile {
+  display: block !important;
+
+  @media (max-width: 49em) {
+    display: none !important;
+  }
 }
 
 .block { display: block; }

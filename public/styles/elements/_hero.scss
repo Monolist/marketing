@@ -10,6 +10,10 @@
   background-color: $highlight;
   color: $white;
 
+  @media (max-width: 49em) {
+    padding: 0 $half-space;
+  }
+
   .hero-container {
     z-index: 2;
     position: relative;
@@ -28,15 +32,18 @@
       color: #eee;
       letter-spacing: 1px;
     }
+  }
 
-    img.screenshot {
-      position: relative;
-      display: block;
-      margin: $full-space auto 0;
-      width: 75%;
-      max-width: 1920px;
-      margin-bottom: -220px;
-    }
+  img.screenshot {
+    position: relative;
+    display: block;
+    margin: $full-space auto 0;
+    width: 65em;
+    max-width: 1920px;
+
+     @media (max-width: 49em) {
+      display: none;
+     }
   }
 
   .scroll-down-container {

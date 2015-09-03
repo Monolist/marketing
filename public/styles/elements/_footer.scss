@@ -1,57 +1,22 @@
 footer {
 
-  z-index: 15;
   position: relative;
-  display: table;
-  width: 100%;
-  padding: $half-space ($sidebar-width+$half-space/2);
-
+  z-index: 15;
   @include box-shadow(10px 10px 50px 25px rgba(0, 0, 0, 0.2));
-  background: $dark-grey-background;
-  color: $light-grey-text;
-  font-size: 16px;
 
-  > div {
-    display: table-cell;
-    height: 100%;
-    padding: $half-space $half-space/2;
 
-    vertical-align: top;
-    text-align: left;
+  @media (max-width: 49em) {
+    padding: 20px 0;
 
-    &.links-container {
-      width: $sidebar-width;
-    }
+    > div {
+      &.logo-container {
+        text-align: center;
+      }
 
-    &.logo-container {
-      width: 15%;
-    }
-
-    &.search-container {
-      width: 55%;
-      vertical-align: top;
-
-      .search-bar {
-        width: 100%;
+      &:not(.logo-container) {
+        display: none;
       }
     }
   }
-
-  ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-
-    li:not(:last-child) {
-      margin-bottom: $half-space*0.75;
-    }
-  }
-
-  a { font-weight: normal; }
-
-  img.logo {
-      max-width: 60%;
-      min-width: 130px;
-    }
 
 }

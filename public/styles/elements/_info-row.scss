@@ -1,0 +1,41 @@
+.info-row {
+
+  padding: $full-space*4 0;
+
+  color: $light-grey-text;
+  font-size: 16px;
+
+  @media (max-width: 49em) {
+    padding: $full-space*2 0;
+    text-align: center !important;
+  }
+
+  i {
+    width: 160px;
+    height: 160px;
+    line-height: 160px;
+    text-align: center;
+    @include border-radius(100%);
+    background-color: $highlight;
+    color: $white;
+    font-size: 72px;
+
+    @media (max-width: 49em) {
+      display: block;
+      margin: 0 auto $full-space*2;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: $white;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 30px;
+  }
+
+  &.medium-bg { background-color: $medium-grey-background; }
+  &.dark-bg { background-color: $medium-dark-grey-background; }
+
+}

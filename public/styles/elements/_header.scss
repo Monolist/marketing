@@ -67,6 +67,10 @@ header {
   .signup {
     opacity: 0;
     @include transition(opacity 0.2s ease-in-out);
+
+   @media (max-width: 49em) {
+      display: none !important;
+    }
   }
 
   &.past-hero {

@@ -4,35 +4,8 @@
   position: relative;
   @include box-shadow(10px 10px 72px 36px rgba(0, 0, 0, 0.4));
 
-  .info-row {
-    display: table;
-    width: 70%;
-    margin: 0 auto;
-
-    color: $light-grey-text;
-    font-size: 16px;
-
-    .icon-container {
-      display: table-cell;
-      width: 100px;
-      vertical-align: middle;
-
-      i {
-        font-size: 72px;
-      }
-    }
-
-    .text-container {
-      display: table-cell;
-      width: 100%;
-      vertical-align: top;
-
-      h1, h2, h3, h4, h5, h6 { color: $white; }
-    }
-  }
-
-  .btn > i {
-    font-size: 20px;
+  .wrapper {
+    padding: 0 $full-space;
   }
 
 }
