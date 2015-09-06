@@ -7,7 +7,7 @@
   height: 100vh;
   overflow: hidden;
 
-  background-color: $highlight;
+  @include linear-gradient($highlight, lighten($highlight, 10));
   color: $white;
 
   @media (max-width: 49em) {
@@ -17,27 +17,29 @@
   .hero-container {
     z-index: 2;
     position: relative;
-    //display: table-cell;
     padding-top: 10rem;
     text-align: center;
 
     .headline,
     .subheadline {
       font-weight: 300;
-      text-transform: uppercase;
       letter-spacing: 2px;
+    }
+
+    .headline {
+      font-size: 50px;
     }
 
     .subheadline {
       color: #eee;
-      letter-spacing: 1px;
+      text-transform: none;
     }
   }
 
   img.screenshot {
     position: relative;
     display: block;
-    margin: $full-space auto 0;
+    margin: 12vh auto 0;
     width: 65em;
     max-width: 1920px;
 
