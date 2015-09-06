@@ -15,9 +15,9 @@ gulp.task('server', function() {
   server.use(morgan('dev'));
   server.use(express.static(config.dist.root));
 
-  // Serve index.html for all routes to leave routing up to Angular
   server.all('/*', function(req, res) {
-      res.sendFile('index.html', { root: 'build' });
+    var fileName = req.path.indexOf('html') === -1 ? req.path + '.html' : req.path;
+    res.sendFile(fileName, { root: 'build' });
   });
 
   // Start webserver if not already running
