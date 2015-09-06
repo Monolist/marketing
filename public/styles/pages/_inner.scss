@@ -17,9 +17,12 @@
     background-color: $dark-grey-background;
     color: $white;
 
-    & > .logo {
-      display: block;
-      margin: 0 auto;
+    a {
+      display: inline-block;
+    }
+
+    .logo {
+      display: inline-block;
       max-height: 60px;
     }
   }
