@@ -3,4 +3,37 @@ layout: inner.hbs
 title: Contact
 ---
 
-<h1>Contact Us</h1>
+<form id="contact-form" class="full-page">
+
+  <h1 class="white nudge--bottom">Contact Us</h1>
+
+  <div class="table-container">
+    <div class="input-container">
+      <label for="email" id="email-label">Your Email</label>
+      <input type="email" id="email" placeholder="you@email.com" required />
+    </div>
+
+    <div class="input-container">
+      <label for="message" id="message-label">Message</label>
+      <textarea id="message" placeholder="Your message..." class="full-width" rows="10"></textarea>
+    </div>
+  </div>
+
+  <div class="error-container nudge-half--ends text-center">
+  </div>
+
+  <div class="spinner-container text-center nudge-half--ends" style="display: none;">
+    {{> spinner }}
+  </div>
+
+  <div class="bottom-buttons-container">
+    <div class="submit-container">
+      <input type="submit" id="submit" class="btn full" value="Send" disabled="true" />
+    </div>
+  </div>
+
+</form>
+
+<div class="success-container" style="display: none;">
+  <p className="nudge-half--bottom">Your message has been sent! If it requires a response, we will get back to you as soon as possible.</p>
+</div>

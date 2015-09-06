@@ -32,8 +32,8 @@ $(document).ready(function() {
     require('./scrollHandler');
   });
 
-  route('/reset', function() {
-    require('./passwordResetPage');
+  route('/contact', function() {
+    require('./contactPage');
   });
 
 });
