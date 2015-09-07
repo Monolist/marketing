@@ -111,3 +111,17 @@ body {
 .hard--right { padding-right: 0 !important; }
 .hard--sides { padding-left: 0; padding-right: 0 !important; }
 .hard--ends { padding-top: 0; padding-bottom: 0 !important; }
+
+.soft-r--left {
+  @extend .soft--left;
+  @include mobile-styles {
+    padding-left: 0 !important;
+  }
+}
+
+.soft-r--right {
+  @extend .soft--right;
+  @include mobile-styles {
+    padding-right: 0 !important;
+  }
+}

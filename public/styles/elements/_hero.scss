@@ -34,6 +34,11 @@
       color: #eee;
       text-transform: none;
     }
+
+    @include mobile-styles {
+      padding-top: 8rem;
+      .headline { font-size: 30px; }
+    }
   }
 
   img.screenshot {
@@ -43,9 +48,10 @@
     width: 65em;
     max-width: 1920px;
 
-     @media (max-width: 49em) {
-      display: none;
-     }
+    @include mobile-styles {
+      width: 23em;
+      margin-top: 12vh;
+    }
   }
 
   .scroll-down-container {

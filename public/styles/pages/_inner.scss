@@ -7,7 +7,7 @@
   color: $light-grey-text;
 
   .inner-header {
-    position: fixed;
+    position: relative;
     right: 0;
     left: 0;
     height: 100px;
@@ -29,7 +29,7 @@
 
   .inner-wrapper {
     position: relative;
-    top: 100px;
+    margin-top: 100px;
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
