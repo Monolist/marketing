@@ -1,3 +1,9 @@
+@mixin mobile-styles {
+  @media (max-width: 49em) {
+    @content;
+  }
+}
+
 @mixin linear-gradient($top, $bottom){
   background: $top;
   background: -moz-linear-gradient(top, $top 0%, $bottom 100%);
@@ -45,7 +51,7 @@
   background-size:         $size;
 }
 
-@mixin background-cover() {
+@mixin background-cover {
   @include background-size(cover);
   background-position: center center;
   background-repeat: no-repeat;

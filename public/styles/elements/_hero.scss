@@ -10,7 +10,7 @@
   @include linear-gradient($highlight, lighten($highlight, 10));
   color: $white;
 
-  @media (max-width: 49em) {
+  @include mobile-styles {
     padding: 0 $half-space;
   }
 

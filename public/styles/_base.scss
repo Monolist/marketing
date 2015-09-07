@@ -48,7 +48,7 @@ body {
 .show-mobile {
   display: none !important;
 
-  @media (max-width: 49em) {
+  @include mobile-styles {
     display: block !important;
   }
 }
@@ -56,7 +56,7 @@ body {
 .hide-mobile {
   display: block !important;
 
-  @media (max-width: 49em) {
+  @include mobile-styles {
     display: none !important;
   }
 }

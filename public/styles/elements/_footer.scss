@@ -5,7 +5,7 @@ footer {
   @include box-shadow(10px 10px 50px 25px rgba(0, 0, 0, 0.2));
 
 
-  @media (max-width: 49em) {
+  @include mobile-styles {
     padding: 20px 0;
 
     > div {

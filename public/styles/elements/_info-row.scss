@@ -5,8 +5,8 @@
   color: $light-grey-text;
   font-size: 16px;
 
-  @media (max-width: 49em) {
-    padding: $full-space*2 0;
+  @include mobile-styles {
+    padding: $full-space 0;
     text-align: center !important;
   }
 
@@ -20,7 +20,7 @@
     color: $white;
     font-size: 72px;
 
-    @media (max-width: 49em) {
+    @include mobile-styles {
       display: block;
       margin: 0 auto $full-space*2;
     }
