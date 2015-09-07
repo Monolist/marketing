@@ -41,6 +41,29 @@
     }
   }
 
+  .sources-list {
+    display: block;
+
+    li {
+      display: inline-block;
+      padding: 0 $half-space;
+
+      i {
+        font-size: 60px;
+        opacity: 0.5;
+        @include transition(opacity 0.2s ease-in-out);
+
+        &:hover { opacity: 1; }
+      }
+    }
+
+    @include mobile-styles {
+      li i {
+        font-size: 40px;
+      }
+    }
+  }
+
   img.screenshot {
     position: relative;
     display: block;
