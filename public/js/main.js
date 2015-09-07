@@ -45,8 +45,4 @@ $(document).ready(() => {
     footerPositioning();
   });
 
-  route('/privacy', () => {
-    footerPositioning();
-  });
-
 });
