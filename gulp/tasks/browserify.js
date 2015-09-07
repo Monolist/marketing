@@ -8,6 +8,7 @@ var streamify    = require('gulp-streamify');
 var rename       = require('gulp-rename');
 var watchify     = require('watchify');
 var browserify   = require('browserify');
+var babelify     = require('babelify');
 var browserSync  = require('browser-sync');
 var sourcemaps   = require('gulp-sourcemaps');
 var buffer       = require('vinyl-buffer');
@@ -32,6 +33,8 @@ function buildScript(file, watch) {
       gutil.log('Rebundle...');
     });
   }
+
+  bundler.transform(babelify);
 
   function rebundle() {
     var stream = bundler.bundle();

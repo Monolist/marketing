@@ -1,29 +1,33 @@
 'use strict';
 
-var $ = require('jquery');
+import $                 from 'jquery';
+
+import footerPositioning from './footerPositioning';
 
 function route(path, cb) {
-  var regex = new RegExp(path, 'i');
+  let regex = new RegExp(path, 'i');
 
   cb = cb || function() {};
 
-  if ( (path === 'index' || path === '' || path === '/') && window.location.pathname === '/' ) {
+  if ( path === '*' ) {
+    cb();
+  } else if ( (path === 'index' || path === '' || path === '/') && window.location.pathname === '/' ) {
     cb();
   } else if ( path.length > 1 && regex.test(window.location.pathname) ) {
     cb();
   }
 }
 
-$(document).ready(function() {
+$(document).ready(() => {
 
-  route('/', function() {
-    var $content = $('.content');
-    var $scrollDownButton = $('.scroll-down-container');
-    var $copyrightDateSpan = $('.year-span');
+  route('/', () => {
+    let $content = $('.content');
+    let $scrollDownButton = $('.scroll-down-container');
+    let $copyrightDateSpan = $('.year-span');
 
     $copyrightDateSpan.text((new Date().getFullYear()).toString());
 
-    $scrollDownButton.click(function() {
+    $scrollDownButton.click(() => {
       $('html, body').animate({
         scrollTop: $content.offset().top
       }, 1500);
@@ -32,8 +36,17 @@ $(document).ready(function() {
     require('./scrollHandler');
   });
 
-  route('/contact', function() {
+  route('/contact', () => {
     require('./contactPage');
+    footerPositioning();
+  });
+
+  route('/about', () => {
+    footerPositioning();
+  });
+
+  route('/privacy', () => {
+    footerPositioning();
   });
 
 });
