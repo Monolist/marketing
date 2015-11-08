@@ -7,7 +7,6 @@ var config      = require('../config');
 
 gulp.task('browserSync', function() {
 
-  var DEFAULT_FILE = 'index.html';
   var ASSET_EXTENSIONS = ['js', 'css', 'png', 'jpg', 'jpeg', 'gif'];
 
   browserSync.init({
@@ -18,7 +17,7 @@ gulp.task('browserSync', function() {
         var fileExtension = fileHrefArray[fileHrefArray.length - 1];
 
         if ( ASSET_EXTENSIONS.indexOf(fileExtension) === -1 ) {
-          req.url = '/' + DEFAULT_FILE;
+          req.url = req.url !== '/' && req.url.indexOf('html') === -1 ? req.url + '.html' : req.url;
         }
 
         return next();
