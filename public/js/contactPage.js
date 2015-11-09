@@ -4,7 +4,7 @@ import $ from 'jquery';
 
 module.exports = (function() {
 
-  const $resetForm        = $('#reset-form');
+  const $contactForm      = $('#contact-form');
   const $successContainer = $('.success-container');
   const $emailInput       = $('input#email');
   const $messageInput     = $('textarea#message');
@@ -33,7 +33,7 @@ module.exports = (function() {
     }
   });
 
-  $('#contact-form').submit((evt) => {
+  $contactForm.submit((evt) => {
     evt.preventDefault();
     evt.stopPropagation();
 
@@ -51,7 +51,7 @@ module.exports = (function() {
     }).then(() => {
       $errorContainer.hide();
       $spinnerContainer.hide();
-      $resetForm.hide();
+      $contactForm.hide();
       $successContainer.show();
     }).fail((err) => {
       const responseText = err.responseText ? JSON.parse(err.responseText) : err.statusText;
