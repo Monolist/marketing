@@ -4,27 +4,27 @@ import $ from 'jquery';
 
 module.exports = (function() {
 
-  let $resetForm        = $('#reset-form');
-  let $successContainer = $('.success-container');
-  let $emailInput       = $('input#email');
-  let $messageInput     = $('textarea#message');
-  let $submitButton     = $('input#submit');
-  let $spinnerContainer = $('.spinner-container');
-  let $errorContainer   = $('.error-container');
+  const $resetForm        = $('#reset-form');
+  const $successContainer = $('.success-container');
+  const $emailInput       = $('input#email');
+  const $messageInput     = $('textarea#message');
+  const $submitButton     = $('input#submit');
+  const $spinnerContainer = $('.spinner-container');
+  const $errorContainer   = $('.error-container');
 
   $('#contact-form input, #contact-form textarea').focus(function() {
-    let labelId = '#' + $(this).attr('id') + '-label';
+    const labelId = '#' + $(this).attr('id') + '-label';
     $(labelId).addClass('active');
   });
 
   $('#contact-form input, #contact-form textarea').blur(function() {
-    let labelId = '#' + $(this).attr('id') + '-label';
+    const labelId = '#' + $(this).attr('id') + '-label';
     $(labelId).removeClass('active');
   });
 
   $('#contact-form input, #contact-form textarea').keyup(function() {
-    let email = $emailInput.val();
-    let message = $messageInput.val();
+    const email = $emailInput.val();
+    const message = $messageInput.val();
 
     if ( !email.length || !message.length ) {
       $submitButton.prop('disabled', true);
@@ -43,7 +43,7 @@ module.exports = (function() {
 
     $.ajax({
       type: 'POST',
-      url: 'https://monolist.co/api/v1/contact',
+      url: 'http://api.monolist.co/v1/contact',
       data: {
         email: $emailInput.val(),
         body: $messageInput.val()
@@ -54,9 +54,8 @@ module.exports = (function() {
       $resetForm.hide();
       $successContainer.show();
     }).fail((err) => {
-      console.log('error:', err);
-      let responseText = err.responseText ? JSON.parse(err.responseText) : err.statusText;
-      let error = responseText.error || 'An error occurred, please try again.';
+      const responseText = err.responseText ? JSON.parse(err.responseText) : err.statusText;
+      const error = responseText.error || 'An error occurred, please try again.';
       $spinnerContainer.hide();
       $errorContainer.text(error);
       $errorContainer.show();
