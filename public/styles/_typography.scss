@@ -85,6 +85,15 @@ a {
   &:hover {
     color: $highlight;
   }
+
+  &.white-link {
+    color: $white;
+
+    &:hover {
+      color: $white;
+      text-decoration: underline;
+    }
+  }
 }
 
 .error, .error-container {
