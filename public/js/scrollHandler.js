@@ -1,22 +1,27 @@
 'use strict';
 
-var $ = require('jquery');
 
 module.exports = (function() {
 
-  var $header = $('header');
-  var $hero = $('.hero');
-  var heroBottom = $hero.offset().top + $hero.outerHeight(true);
-  var headerHeight = $header.outerHeight(true);
+  var headerEl = document.getElementsByTagName('header')[0];
+  var heroEl = document.getElementsByClassName('hero')[0];
+  var heroBottom = heroEl.offsetTop + heroEl.offsetHeight;
+  var headerHeight = headerEl.offsetHeight;
   var currentScrollPosition;
 
-  $(window).scroll(function() {
-    currentScrollPosition = $(document).scrollTop();
+  console.log('heroBottom - headerHeight:', heroBottom - headerHeight);
+
+  window.addEventListener('scroll', function() {
+    currentScrollPosition = window.scrollY;
+
+    console.log('currentScrollPosition:', currentScrollPosition);
 
     if ( currentScrollPosition > (heroBottom - headerHeight) ) {
-      $header.addClass('past-hero');
+      console.log('is past');
+      headerEl.classList.add('past-hero');
     } else {
-      $header.removeClass('past-hero');
+      console.log('is not past');
+      headerEl.classList.remove('past-hero');
     }
   });
 
