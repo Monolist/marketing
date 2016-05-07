@@ -57,9 +57,23 @@
       }
     }
 
+    .audiomack-logo {
+      height: 60px;
+      width: 60px;
+      opacity: 0.5;
+      @include transition(opacity 0.2s ease-in-out);
+
+      &:hover { opacity: 1; }
+    }
+
     @include mobile-styles {
       li i {
         font-size: 40px;
+      }
+
+      .audiomack-logo {
+        height: 40px;
+        width: 40px;
       }
     }
   }
