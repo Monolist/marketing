@@ -3,14 +3,21 @@ layout: inner.hbs
 title: Contact
 ---
 
-<h2 class="white nudge--bottom">Contact Us</h2>
+<div class="title-container">
+  <div class="icon-container">
+    <i class="icon-envelope"></i>
+  </div>
+  <h5 class="title">Contact Us</h5>
+</div>
 
 <form id="contact-form" class="full-page">
 
   <div class="table-container">
     <div class="input-container">
       <label for="email" id="email-label">Your Email</label>
-      <input type="email" id="email" placeholder="you@email.com" required />
+      <div class="input">
+        <input type="email" id="email" placeholder="you@email.com" required />
+      </div>
     </div>
 
     <div class="input-container">
