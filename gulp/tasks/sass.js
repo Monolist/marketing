@@ -1,10 +1,11 @@
 'use strict';
 
-var gulp        = require('gulp');
-var sass        = require('gulp-sass');
-var rename      = require('gulp-rename');
-var browserSync = require('browser-sync');
-var config      = require('../config');
+var gulp         = require('gulp');
+var sass         = require('gulp-sass');
+var rename       = require('gulp-rename');
+var browserSync  = require('browser-sync');
+var handleErrors = require('../util/handle-errors');
+var config       = require('../config');
 
 gulp.task('sass', function() {
 
@@ -14,10 +15,10 @@ gulp.task('sass', function() {
     sourceComments: global.isProd ? 'none' : 'map',
     sourceMap: 'sass',
     outputStyle: global.isProd ? 'compressed' : 'nested',
-    onError: function(e) { console.log(e); }
   }))
+  .on('error', handleErrors)
   .pipe(rename({suffix: '.min'}))
   .pipe(gulp.dest(config.styles.dest))
-  .pipe(browserSync.stream({ once: true }));
+  .pipe(browserSync.stream());
 
 });
