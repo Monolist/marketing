@@ -14,14 +14,20 @@ title: Contact
 
   <div class="table-container">
     <div class="input-container">
-      <label for="email" id="email-label">Your Email</label>
+      <label for="email" id="email-label">
+        Your Email
+        <span className="red">*</span>
+      </label>
       <div class="input">
         <input type="email" id="email" placeholder="you@email.com" required />
       </div>
     </div>
 
     <div class="input-container">
-      <label for="message" id="message-label">Message</label>
+      <label for="message" id="message-label">
+        Message
+        <span className="red">*</span>
+      </label>
       <textarea id="message" placeholder="Your message..." class="full-width" rows="10"></textarea>
     </div>
   </div>
