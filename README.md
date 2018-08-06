@@ -1,7 +1,7 @@
 monolist-marketing
 ==================
 
-The static marketing and landing page for Monolist.
+The static marketing and landing page for the now-defunct music app Monolist.
 
 ---
 
